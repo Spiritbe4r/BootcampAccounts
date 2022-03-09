@@ -12,7 +12,7 @@ public class AppUtils {
         return accDto;
     }
 
-    public static Account DtoToEntity(AccountDto accDto){
+    public static Account dtoToEntity(AccountDto accDto){
         Account account=new Account();
         BeanUtils.copyProperties(accDto,account);
         return account;

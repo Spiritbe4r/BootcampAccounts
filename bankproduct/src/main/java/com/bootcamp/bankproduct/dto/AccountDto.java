@@ -6,6 +6,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class AccountDto {
 	private String idAccount;
 	private String balance;

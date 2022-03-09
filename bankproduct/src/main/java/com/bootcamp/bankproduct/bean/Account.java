@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 public class Account {
 	@Id
-	private String idAccount;
+	private String id;
 	private String balance;
 	private String currency;
 	private String idClient;
