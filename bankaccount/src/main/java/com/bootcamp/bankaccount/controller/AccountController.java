@@ -1,6 +1,7 @@
 package com.bootcamp.bankaccount.controller;
 
 import com.bootcamp.bankaccount.dto.AccountDto;
+import com.bootcamp.bankaccount.service.AccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class AccountController {
     public Flux<AccountDto> getAccount(){
         //log.debug("valor:{0}","ddddd");
         LOGGER.debug("Getting clients!");
-        return accountService.getClients();
+        return accountService.getAccount();
     }
 
     @GetMapping("/{id}")
@@ -30,13 +31,13 @@ public class AccountController {
     }
 
     @PostMapping
-    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> clientDtoMono){
-        return accountService.saveClients(clientDtoMono);
+    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono){
+        return accountService.saveAccount(accountDtoMono);
     }
 
     @PutMapping("/{id}")
-    public Mono<AccountDto> updateAccount(@RequestBody Mono<AccountDto> clientDtoMono,@PathVariable String id){
-        return accountService.updateAccount(clientDtoMono,id);
+    public Mono<AccountDto> updateAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable String id){
+        return accountService.updateAccount(accountDtoMono,id);
     }
 
     @DeleteMapping("/{id}")

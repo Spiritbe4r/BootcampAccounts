@@ -12,6 +12,7 @@ public class Account {
 	private String balance;
 	private String currency;
 	private String idClient;
+	private String accountNumber;
 	private String typeSavingAcc;
 	private String typeCurrentAcc;
 	private String typeTermAcc;
