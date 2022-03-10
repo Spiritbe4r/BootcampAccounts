@@ -1,6 +1,6 @@
 spring:
   application:
-    name: client-microservice
+    name: bankproducts-microservice
   config:
     import: configserver:http://localhost:8888
   profiles:
