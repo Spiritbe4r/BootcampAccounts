@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: client-microservice
+  config:
+    import: configserver:http://localhost:8888
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+health:
+  config:
+    enabled=false:
+
+logging:
+  config:
+  file: logback-spring.xml
