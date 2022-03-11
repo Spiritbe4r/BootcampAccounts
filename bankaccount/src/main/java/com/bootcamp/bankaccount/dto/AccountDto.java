@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class AccountDto {
-	private String idAccount;
+	private String id;
 	private String balance;
 	private String currency;
 	private String idClient;
