@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bankproduct" />
+        <module name="bankaccount" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bankproduct" target="11" />
+      <module name="bankaccount" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="bankproduct" options="-parameters" />
+      <module name="bankaccount" options="-parameters" />
     </option>
   </component>
 </project>
