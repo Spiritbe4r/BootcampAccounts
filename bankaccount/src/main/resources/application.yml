@@ -25,4 +25,8 @@ logging:
   config:
   file: logback-spring.xml
 
+ClientMsEndpoint: http://localhost:8085/api/clients/
+
+
+
 
