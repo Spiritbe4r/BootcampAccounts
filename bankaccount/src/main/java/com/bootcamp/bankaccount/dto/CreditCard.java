@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class CreditCard {
     private String pan;
 
-    private ClientCommand customer;
+    private ClientCommand client;
 
-    private boolean debtor;
+    private boolean debitor ;
 }

@@ -19,13 +19,12 @@ public class Account {
 	private String accountNumber;
 	private String typeCurrentAcc;
 	private double balance;
-	private String idClient;
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime operationDate = LocalDateTime.now();
 
 	private ClientCommand client;
 
-	private String clientNumber;
+	private String clientIdNumber;
 
 }

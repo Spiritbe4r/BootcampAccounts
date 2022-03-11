@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerQuery {
+public class ClientQuery {
     private String name;
-    private String customerIdentityNumber;
-    private String customerIdentityType;
-    private CustomerTypeRequest customerType;
+    private String clientNumber;
+    //private String clientIdentityType;
+    private ClientTypeRequest clientType;
 }
