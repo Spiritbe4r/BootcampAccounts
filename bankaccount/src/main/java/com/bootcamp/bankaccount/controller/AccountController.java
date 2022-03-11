@@ -5,6 +5,7 @@ import com.bootcamp.bankaccount.service.AccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -14,7 +15,8 @@ import reactor.core.publisher.Mono;
 @RequestMapping(path = "/api/accounts")
 public class AccountController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
-
+    @Value("${spring.application.name}")
+    private String appName;
     @Autowired
     private AccountService accountService;
 
@@ -22,6 +24,7 @@ public class AccountController {
     public Flux<AccountDto> getAccount(){
         //log.debug("valor:{0}","ddddd");
         LOGGER.debug("Getting Accounts!");
+
         return accountService.getAccount();
     }
 
