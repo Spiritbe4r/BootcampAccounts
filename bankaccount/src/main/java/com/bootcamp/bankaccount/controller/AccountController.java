@@ -1,8 +1,6 @@
 package com.bootcamp.bankaccount.controller;
 
-import com.bootcamp.bankaccount.bean.Account;
 import com.bootcamp.bankaccount.dto.AccountDto;
-import com.bootcamp.bankaccount.dto.ClientCommand;
 import com.bootcamp.bankaccount.service.AccountService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,11 +38,12 @@ public class AccountController {
         return accountService.getAccountById(id);
     }
 
-    /*@PostMapping
-    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono){
+    
+    @PostMapping()
+    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable String idClient){
         LOGGER.debug("Saving clients!");
-        return accountService.saveAccount(accountDtoMono);
-    }*/
+        return accountService.saveAccount(accountDtoMono,idClient);
+    }
 
     @PutMapping("/{id}")
     public Mono<AccountDto> updateAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable String id){
