@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: reactive-microservice
+  data:
+    mongodb:
+      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/reactive?retryWrites=true&w=majority
