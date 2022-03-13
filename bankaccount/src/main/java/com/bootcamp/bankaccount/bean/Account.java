@@ -20,6 +20,9 @@ public class Account {
 	private String typeCurrentAcc;
 	private double balance;
 
+	private String currency;
+	private String canBeDeposit;
+
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime operationDate = LocalDateTime.now();
 

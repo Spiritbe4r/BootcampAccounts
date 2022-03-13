@@ -51,11 +51,11 @@ public class AccountServiceImpl implements AccountService {
 
 
     public Mono<AccountDto> saveAccount(Mono<AccountDto> accountDtoMono, String clientNumber) {
-        Mono<ClientCommand>monoClient=this.webClient
-                .method(HttpMethod.GET)
-                .uri("/api/clients/{id}",clientNumber)
-                .retrieve()
-                .bodyToMono(ClientCommand.class);
+//        Mono<ClientCommand>monoClient=this.webClient
+//                .method(HttpMethod.GET)
+//                .uri("/api/clients/{id}",clientNumber)
+//                .retrieve()
+//                .bodyToMono(ClientCommand.class);
 
 
 

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.util.annotation.Nullable;
 
 //@Slf4j
 @RestController
@@ -19,9 +20,6 @@ public class AccountController {
     private String appName;
     @Autowired
     private AccountService accountService;
-
-
-
 
 
     @GetMapping
@@ -38,9 +36,9 @@ public class AccountController {
         return accountService.getAccountById(id);
     }
 
-    
+
     @PostMapping()
-    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable String idClient){
+    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable @Nullable String idClient){
         LOGGER.debug("Saving clients!");
         return accountService.saveAccount(accountDtoMono,idClient);
     }
