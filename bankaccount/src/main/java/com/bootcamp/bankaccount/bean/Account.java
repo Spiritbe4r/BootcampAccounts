@@ -22,7 +22,7 @@ public class Account {
 
 	private String accountNumber;
 	private String typeCurrentAcc;
-	private double balance;
+	private String balance;
 
 	private String currency;
 	private String canBeDeposit;
