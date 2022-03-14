@@ -35,7 +35,7 @@ class DepositControllerTest {
 
         dto = new AccountDto("230","1200","USD","005","","34567788", ClientCommand.builder().build());
         fluxDto = Flux.just(dto);
-        fluxDo = Flux.just(new Account("120","USD","CRED",2.00,"230","876543222", LocalDateTime.now(),ClientCommand.builder().build(),"230"));
+        fluxDo = Flux.just(new Account("120","USD","CRED","20","230","876543222", LocalDateTime.now(),ClientCommand.builder().build(),"230"));
     }
 
     @Test
