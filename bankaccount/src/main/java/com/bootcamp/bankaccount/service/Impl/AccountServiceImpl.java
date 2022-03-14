@@ -5,12 +5,15 @@ import com.bootcamp.bankaccount.models.dto.AccountDto;
 import com.bootcamp.bankaccount.repository.AccountRepository;
 import com.bootcamp.bankaccount.service.AccountService;
 import com.bootcamp.bankaccount.util.AppUtils;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
+@AllArgsConstructor @NoArgsConstructor @Builder
 @Service
 public class AccountServiceImpl implements AccountService {
 

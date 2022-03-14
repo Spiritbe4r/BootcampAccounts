@@ -16,7 +16,9 @@ public class AccountDto {
 	private String typeCurrentAcc;
 	private double balance;
 
+
 	private String currency;
+
 	private LocalDateTime operationDate = LocalDateTime.now();
 
 	private ClientCommand client;
@@ -25,7 +27,12 @@ public class AccountDto {
 
 	private int maxLimitMovementPerMonth;
 
+	private String canBeDeposit;
+	private int depositLimited;
+
+
 	private String clientIdNumber;
+
 
 
 }
