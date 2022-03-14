@@ -1,4 +1,4 @@
-package com.bootcamp.bankaccount.dto;
+package com.bootcamp.bankaccount.models.dto;
 
 import lombok.*;
 

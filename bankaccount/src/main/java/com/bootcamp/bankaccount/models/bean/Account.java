@@ -1,6 +1,6 @@
-package com.bootcamp.bankaccount.bean;
+package com.bootcamp.bankaccount.models.bean;
 
-import com.bootcamp.bankaccount.dto.ClientCommand;
+import com.bootcamp.bankaccount.models.dto.ClientCommand;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

@@ -1,9 +1,7 @@
 package com.bootcamp.bankaccount.service;
 
-import com.bootcamp.bankaccount.bean.Account;
-import com.bootcamp.bankaccount.dto.AccountDto;
-import com.bootcamp.bankaccount.dto.Credit;
-import com.bootcamp.bankaccount.dto.CreditCard;
+import com.bootcamp.bankaccount.models.bean.Account;
+import com.bootcamp.bankaccount.models.dto.AccountDto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

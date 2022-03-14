@@ -1,12 +1,11 @@
 package com.bootcamp.bankaccount.handlers;
 
-import com.bootcamp.bankaccount.bean.Account;
-import com.bootcamp.bankaccount.dto.AccountDto;
-import com.bootcamp.bankaccount.dto.ClientCommand;
+import com.bootcamp.bankaccount.models.bean.Account;
+import com.bootcamp.bankaccount.models.dto.AccountDto;
+import com.bootcamp.bankaccount.models.dto.ClientCommand;
 import com.bootcamp.bankaccount.service.AccountService;
 import com.bootcamp.bankaccount.service.ClientService;
 import com.bootcamp.bankaccount.service.CreditService;
-import com.bootcamp.bankaccount.service.Impl.ClientServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

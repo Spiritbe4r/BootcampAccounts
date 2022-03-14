@@ -1,4 +1,4 @@
-package com.bootcamp.bankaccount.dto;
+package com.bootcamp.bankaccount.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientQuery {
+public class ClientTypeRequest {
     private String name;
-    private String clientIdNumber;
-    //private String clientIdType;
-    private ClientTypeRequest clientType;
+    private String code;
 }

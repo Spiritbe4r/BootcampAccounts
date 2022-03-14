@@ -1,9 +1,7 @@
 package com.bootcamp.bankaccount.service;
 
-import com.bootcamp.bankaccount.dto.Credit;
-import com.bootcamp.bankaccount.dto.CreditCard;
+import com.bootcamp.bankaccount.models.dto.Credit;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 public interface CreditService {
 

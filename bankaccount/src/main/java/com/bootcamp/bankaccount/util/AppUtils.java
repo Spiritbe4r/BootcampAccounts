@@ -1,7 +1,7 @@
 package com.bootcamp.bankaccount.util;
 
-import com.bootcamp.bankaccount.bean.Account;
-import com.bootcamp.bankaccount.dto.AccountDto;
+import com.bootcamp.bankaccount.models.bean.Account;
+import com.bootcamp.bankaccount.models.dto.AccountDto;
 import org.springframework.beans.BeanUtils;
 
 public class AppUtils {

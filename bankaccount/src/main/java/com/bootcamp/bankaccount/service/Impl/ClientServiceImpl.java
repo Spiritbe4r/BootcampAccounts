@@ -1,8 +1,7 @@
 package com.bootcamp.bankaccount.service.Impl;
 
-import com.bootcamp.bankaccount.dto.ClientQuery;
+import com.bootcamp.bankaccount.models.dto.ClientQuery;
 import com.bootcamp.bankaccount.service.ClientService;
-import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

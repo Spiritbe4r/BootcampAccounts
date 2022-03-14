@@ -1,4 +1,4 @@
-package com.bootcamp.bankaccount.dto;
+package com.bootcamp.bankaccount.models.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,8 +9,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreditCard {
-    private String pan;
+public class Credit {
+
+    private String contractNumber;
 
     private ClientCommand client;
 
