@@ -2,6 +2,7 @@ package com.bootcamp.bankaccount.controller;
 
 import com.bootcamp.bankaccount.dto.AccountDto;
 import com.bootcamp.bankaccount.service.AccountService;
+import com.bootcamp.bankaccount.service.Impl.AccountServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import reactor.util.annotation.Nullable;
 
 //@Slf4j
 @RestController
-@RequestMapping(path = "/api/accounts")
+@RequestMapping(path = "/api/accounts/2")
 public class AccountController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
     @Value("${spring.application.name}")
@@ -27,7 +28,7 @@ public class AccountController {
         //log.debug("valor:{0}","ddddd");
         LOGGER.debug("Getting Accounts!");
 
-        return accountService.getAccount();
+        return accountService.getAccounts();
     }
 
     @GetMapping("/{id}")
@@ -37,11 +38,11 @@ public class AccountController {
     }
 
 
-    @PostMapping()
-    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable @Nullable String idClient){
+    /*@PostMapping()
+    public Mono<AccountDto> saveAccount(@RequestBody Mono<AccountDto> accountDtoMono){
         LOGGER.debug("Saving clients!");
-        return accountService.saveAccount(accountDtoMono,idClient);
-    }
+        return accountService.saveAccount(accountDtoMono);
+    }*/
 
     @PutMapping("/{id}")
     public Mono<AccountDto> updateAccount(@RequestBody Mono<AccountDto> accountDtoMono,@PathVariable String id){

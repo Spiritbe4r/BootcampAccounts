@@ -2,14 +2,12 @@ package com.bootcamp.bankaccount.service.Impl;
 
 import com.bootcamp.bankaccount.bean.Account;
 import com.bootcamp.bankaccount.dto.AccountDto;
-import com.bootcamp.bankaccount.dto.ClientCommand;
 import com.bootcamp.bankaccount.repository.AccountRepository;
 import com.bootcamp.bankaccount.service.AccountService;
 import com.bootcamp.bankaccount.util.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -17,13 +15,9 @@ import reactor.core.publisher.Mono;
 public class AccountServiceImpl implements AccountService {
 
     @Autowired
-    private WebClient webClient;
-
-
-    @Autowired
     private AccountRepository accountRepository;
 
-    public Flux<AccountDto> getAccount() {
+    public Flux<AccountDto> getAccounts() {
         return accountRepository.findAll().map(AppUtils::entityToDto);
     }
 
@@ -32,36 +26,10 @@ public class AccountServiceImpl implements AccountService {
         return accountRepository.findById(id).map(AppUtils::entityToDto);
     }
 
-    @Override
-    public Mono<Account> getAccountByAccountNumber(String accountNumber) {
-        return null;
-    }
-    /*
-    @Override
-    public Mono<AccountDto> getAccountByName(String name) {
-        return accountRepository.findByName(name);
-    }
 
-    @Override
-    public Mono<AccountDto> getAccountByAccountNumber(String accountNumber) {
-        return accountRepository.findByAccountNumber(accountNumber)
-                .switchIfEmpty(Mono.just(AccountDto.builder()
-                        .accountNumber(null).build()));
-    }*/
+    public Mono<Account> saveAccount(Account accountDtoMono) {
 
-
-    public Mono<AccountDto> saveAccount(Mono<AccountDto> accountDtoMono, String clientNumber) {
-//        Mono<ClientCommand>monoClient=this.webClient
-//                .method(HttpMethod.GET)
-//                .uri("/api/clients/{id}",clientNumber)
-//                .retrieve()
-//                .bodyToMono(ClientCommand.class);
-
-
-
-        return accountDtoMono.map(AppUtils::dtoToEntity)
-                .flatMap(accountRepository::insert)
-                .map(AppUtils::entityToDto);
+        return accountRepository.save(accountDtoMono);
 
     }
 
@@ -75,5 +43,22 @@ public class AccountServiceImpl implements AccountService {
 
     public Mono<Void> deleteAccount(String id) {
         return accountRepository.deleteById(id);
+    }
+
+    @Override
+    public Mono<Account> validateClientIdNumber(String customerIdentityNumber) {
+        return accountRepository.findByClientIdNumber(customerIdentityNumber)
+                .switchIfEmpty(Mono.just(Account.builder()
+                        .clientIdNumber(null).build()));
+    }
+
+    @Override
+    public Mono<Account> findByClientIdNumber(String clientIdNumber) {
+        return accountRepository.findByClientIdNumber(clientIdNumber);
+    }
+
+    @Override
+    public Mono<Account> findByAccountNumber(String accountNumber) {
+        return accountRepository.findByAccountNumber(accountNumber);
     }
 }

@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ClientQuery {
     private String name;
-    private String clientNumber;
-    //private String clientIdentityType;
+    private String clientIdNumber;
+    //private String clientIdType;
     private ClientTypeRequest clientType;
 }

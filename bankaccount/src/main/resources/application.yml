@@ -1,6 +1,3 @@
-server:
-  port: 8082
-
 spring:
   application:
     name: bankaccounts-microservice
@@ -12,20 +9,6 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
-health:
-  config:
-    enabled=false:
-
-logging:
-  config:
-  file: logback-spring.xml
-
-ClientMsEndpoint: http://localhost:8085/api/clients/
 
 
 

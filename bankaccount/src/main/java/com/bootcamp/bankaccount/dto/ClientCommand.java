@@ -9,5 +9,5 @@ import lombok.*;
 public class ClientCommand {
     private String name;
     private String code;
-    private String clientNumber;
+    private String clientIdNumber;
 }
