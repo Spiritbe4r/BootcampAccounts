@@ -15,8 +15,8 @@ public class AccountRouter {
 
     @Bean
     public RouterFunction<ServerResponse>routes(AccountHandler accountHandler){
-        return route(GET("/api/accounts"),accountHandler::findAll)
-                .andRoute(POST("/api/accounts/{clientIdNumber}"),accountHandler::newSavingAccount)
-                .andRoute(DELETE("/api/accounts/{id}"),accountHandler::deleteSavingAccount);
+        return route(GET("/api/faccounts"),accountHandler::findAll)
+                .andRoute(POST("/api/faccounts/{clientIdNumber}"),accountHandler::newSavingAccount)
+                .andRoute(DELETE("/api/faccounts/{id}"),accountHandler::deleteSavingAccount);
     }
 }
