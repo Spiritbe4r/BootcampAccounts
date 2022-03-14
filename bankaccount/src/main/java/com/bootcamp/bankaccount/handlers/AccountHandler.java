@@ -42,7 +42,7 @@ public class AccountHandler {
                             accountCreate.setClient(ClientCommand.builder()
                                     .name(customer.getName()).code(customer.getClientType().getCode())
                                     .clientIdNumber(customer.getClientIdNumber()).build());
-                            accountCreate.setTypeCurrentAcc("SAVING_ACCOUNT");
+                            accountCreate.setAccountType("SAVING_ACCOUNT");
                             accountCreate.setMaxLimitMovementPerMonth(accountCreate.getMaxLimitMovementPerMonth());
                             accountCreate.setMovementPerMonth(0);
                             return  accountService.saveAccount(accountCreate);

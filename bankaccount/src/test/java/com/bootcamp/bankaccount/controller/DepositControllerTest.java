@@ -1,8 +1,8 @@
 package com.bootcamp.bankaccount.controller;
 
-import com.bootcamp.bankaccount.bean.Account;
-import com.bootcamp.bankaccount.dto.AccountDto;
-import com.bootcamp.bankaccount.dto.ClientCommand;
+import com.bootcamp.bankaccount.models.bean.Account;
+import com.bootcamp.bankaccount.models.dto.AccountDto;
+import com.bootcamp.bankaccount.models.dto.ClientCommand;
 import com.bootcamp.bankaccount.repository.AccountRepository;
 import com.bootcamp.bankaccount.service.AccountService;
 import lombok.AllArgsConstructor;
@@ -33,14 +33,13 @@ class DepositControllerTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        dto = new AccountDto("22575230","12345","1","123.00","USD","0",1, ClientCommand.builder().build(),"007");
+        dto = new AccountDto("22575230","12345",123.00,"USD","1","1",LocalDateTime.now(), ClientCommand.builder().build(),0,3,"007");
         fluxDto = Flux.just(dto);
-        fluxDo = Flux.just(new Account("22575230","12345","1","123.00","USD","0",1,LocalDateTime.now(), ClientCommand.builder().build(),"007"));
-    }
+        fluxDo = Flux.just(new Account("22575230","12345",123.00,"USD","1","1",LocalDateTime.now(), ClientCommand.builder().build(),0,3,"007"));    }
 
     @Test
     void getAccount() {
-        Mockito.when(accountService.getAccount()).thenReturn(fluxDto);
+        Mockito.when(accountService.getAccounts()).thenReturn(fluxDto);
         Assertions.assertNotNull(controller.getAccount());
     }
 }

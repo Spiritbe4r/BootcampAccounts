@@ -1,8 +1,8 @@
 package com.bootcamp.bankaccount.service;
 
-import com.bootcamp.bankaccount.bean.Account;
-import com.bootcamp.bankaccount.dto.AccountDto;
-import com.bootcamp.bankaccount.dto.ClientCommand;
+import com.bootcamp.bankaccount.models.bean.Account;
+import com.bootcamp.bankaccount.models.dto.AccountDto;
+import com.bootcamp.bankaccount.models.dto.ClientCommand;
 import com.bootcamp.bankaccount.repository.AccountRepository;
 import com.bootcamp.bankaccount.service.Impl.AccountServiceImpl;
 import org.junit.jupiter.api.Assertions;
@@ -28,28 +28,30 @@ class DepositServiceImplTest {
 
     private Mono<AccountDto> accountDtoMono;
     private Mono<AccountDto> accountCreated;
-
+    private Account account;
+    private AccountDto accountDto;
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        fluxDto = Flux.just(new Account("22575230","12345","1","123.00","USD","1",0,"1",LocalDateTime.now(), ClientCommand.builder().build(),"007"));
-
-        accountDtoMono = Mono.just(new AccountDto("22575230","12345","1","123.00","USD","1",0,"1", ClientCommand.builder().build(),"007"));
+        Account account = new Account("22575230","12345",123.00,"USD","1","1",LocalDateTime.now(), ClientCommand.builder().build(),0,3,"007");
+        fluxDto = Flux.just();
+        accountDto = new AccountDto("22575230","12345",123.00,"USD","1","1",LocalDateTime.now(), ClientCommand.builder().build(),0,3,"007");
+        accountDtoMono = Mono.just(accountDto);
     }
 
     @Test
     void getAccount() {
         Mockito.when(accountRepository.findAll()).thenReturn(fluxDto);
 
-        Assertions.assertNotNull(service.getAccount());
+        Assertions.assertNotNull(service.getAccounts());
     }
 
     @Test
     void saveAccount() {
 //        Mockito.when(depositRepository.save(ArgumentMatchers.any(depositDtoMono.getClass()))).thenReturn();
 
-        Assertions.assertNotNull(service.saveAccount(accountDtoMono,"12"));
+        Assertions.assertNotNull(service.saveAccount(account));
         //Mockito.verify(depositRepository, Mockito.times(1)).save(ArgumentMatchers.any(depositDtoMono.getClass())));
     }
 }

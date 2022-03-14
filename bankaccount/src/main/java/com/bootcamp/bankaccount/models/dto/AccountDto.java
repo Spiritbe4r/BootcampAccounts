@@ -13,11 +13,14 @@ public class AccountDto {
 	private String id;
 
 	private String accountNumber;
-	private String typeCurrentAcc;
+
 	private double balance;
 
-
 	private String currency;
+
+	private String accountType;
+
+	private String canBeDeposit;
 
 	private LocalDateTime operationDate = LocalDateTime.now();
 
@@ -26,10 +29,6 @@ public class AccountDto {
 	private int movementPerMonth;
 
 	private int maxLimitMovementPerMonth;
-
-	private String canBeDeposit;
-	private int depositLimited;
-
 
 	private String clientIdNumber;
 
