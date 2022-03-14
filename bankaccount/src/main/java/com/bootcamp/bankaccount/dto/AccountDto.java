@@ -16,6 +16,7 @@ public class AccountDto {
 
 	private String currency;
 	private String canBeDeposit;
+	private int depositLimited;
 
 	private ClientCommand clientCommand;
 
