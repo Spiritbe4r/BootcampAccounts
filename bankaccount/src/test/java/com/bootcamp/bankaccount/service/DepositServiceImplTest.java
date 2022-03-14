@@ -33,9 +33,9 @@ class DepositServiceImplTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        fluxDto = Flux.just(new Account("23", "1310088", "USD", "23", "344", "876543222", LocalDateTime.now(), ClientCommand.builder().build(),"12"));
+        fluxDto = Flux.just(new Account("22575230","12345","1","123.00","USD","1",0,"1",LocalDateTime.now(), ClientCommand.builder().build(),"007"));
 
-        accountDtoMono = Mono.just(new AccountDto("13100", "USD", "007", "343", "876543222", "234", ClientCommand.builder().build()));
+        accountDtoMono = Mono.just(new AccountDto("22575230","12345","1","123.00","USD","1",0,"1", ClientCommand.builder().build(),"007"));
     }
 
     @Test

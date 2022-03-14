@@ -33,9 +33,9 @@ class DepositControllerTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
 
-        dto = new AccountDto("230","1200","USD","005","","34567788", ClientCommand.builder().build());
+        dto = new AccountDto("22575230","12345","1","123.00","USD","1",0,"1", ClientCommand.builder().build(),"007");
         fluxDto = Flux.just(dto);
-        fluxDo = Flux.just(new Account("120","USD","CRED","20","230","876543222", LocalDateTime.now(),ClientCommand.builder().build(),"230"));
+        fluxDo = Flux.just(new Account("22575230","12345","1","123.00","USD","1",0,"1",LocalDateTime.now(), ClientCommand.builder().build(),"007"));
     }
 
     @Test

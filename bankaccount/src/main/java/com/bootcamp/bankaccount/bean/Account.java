@@ -21,12 +21,13 @@ public class Account {
 	private String id;
 
 	private String accountNumber;
-	private String typeCurrentAcc;
+	private String accountType;
 	private String balance;
 
 	private String currency;
 	private String canBeDeposit;
 	private int depositLimited;
+	private String typeAccount;
 
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime operationDate = LocalDateTime.now();
