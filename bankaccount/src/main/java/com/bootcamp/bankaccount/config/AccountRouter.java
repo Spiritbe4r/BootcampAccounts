@@ -1,4 +1,4 @@
-package com.bootcamp.bankaccount.routers;
+package com.bootcamp.bankaccount.config;
 
 import com.bootcamp.bankaccount.handlers.AccountHandler;
 import org.springframework.context.annotation.Bean;

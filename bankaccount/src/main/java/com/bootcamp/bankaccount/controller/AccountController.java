@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 //@Slf4j
 @RestController
-@RequestMapping(path = "/api/accounts")
+@RequestMapping(path = "/api/account")
 public class AccountController {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
     @Value("${spring.application.name}")
