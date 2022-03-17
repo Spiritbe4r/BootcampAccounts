@@ -1,6 +1,6 @@
 spring:
   application:
-    name: bankaccounts-microservice
+    name: accounts-microservice
   config:
     import: configserver:http://localhost:8887
   profiles:
@@ -8,6 +8,7 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
 
 
 

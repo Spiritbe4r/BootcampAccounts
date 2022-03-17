@@ -5,6 +5,7 @@ import com.bootcamp.bankaccount.service.CreditService;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -22,11 +23,14 @@ public class CreditServiceImpl implements CreditService {
 
     private static final Logger LOGGER= LoggerFactory.getLogger(CreditServiceImpl.class);
 
+    @Value("${microservices-urls.api-credit}")
+    private String API_CREDIT;
+
     private final WebClient creditWebClient;
 
     public CreditServiceImpl(){
         this.creditWebClient=WebClient.builder()
-                .baseUrl(API_CREDIT_URL)
+                .baseUrl(API_CREDIT)
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }

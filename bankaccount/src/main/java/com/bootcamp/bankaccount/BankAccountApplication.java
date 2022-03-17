@@ -1,6 +1,7 @@
 package com.bootcamp.bankaccount;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -16,10 +17,13 @@ import static com.bootcamp.bankaccount.util.Constants.API_CLIENT_URL;
 @SpringBootApplication
 public class BankAccountApplication {
 
+	@Value("${microservices-urls.api-client}")
+	private String API_CLIENT;
+
 	@Bean
 	public WebClient webClient(WebClient.Builder builder){
 		return builder
-				.baseUrl(API_CLIENT_URL)
+				.baseUrl(API_CLIENT)
 				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
 				.build();
 	}
