@@ -27,8 +27,8 @@ public class AccountServiceImpl implements AccountService {
   }
 
   @Override
-  public Mono<AccountDto> getAccountById(String id) {
-    return accountRepository.findById(id).map(AppUtils::entityToDto);
+  public Mono<Account> getAccountById(String id) {
+    return accountRepository.findById(id);
   }
 
 
@@ -44,6 +44,11 @@ public class AccountServiceImpl implements AccountService {
                 .doOnNext(e -> e.setId(id)))
           .flatMap(accountRepository::save)
           .map(AppUtils::entityToDto);
+  }
+
+  @Override
+  public Mono<Account> update(Account obj) {
+    return accountRepository.save(obj);
   }
 
   public Mono<Void> deleteAccount(String id) {

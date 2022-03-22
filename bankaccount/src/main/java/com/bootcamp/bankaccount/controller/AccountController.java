@@ -1,5 +1,6 @@
 package com.bootcamp.bankaccount.controller;
 
+import com.bootcamp.bankaccount.models.bean.Account;
 import com.bootcamp.bankaccount.models.dto.AccountDto;
 import com.bootcamp.bankaccount.service.AccountService;
 import org.slf4j.Logger;
@@ -35,7 +36,7 @@ public class AccountController {
   }
 
   @GetMapping("/{id}")
-  public Mono<AccountDto> getAccount(@PathVariable String id) {
+  public Mono<Account> getAccount(@PathVariable String id) {
     LOGGER.debug("Getting a accounts!");
     return accountService.getAccountById(id);
   }

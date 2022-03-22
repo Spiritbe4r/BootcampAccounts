@@ -18,7 +18,7 @@ public class AccountDto {
 
   private String accountNumber;
 
-  private String accountType;
+  private String typeOfAccount;
 
   private double amount;
 

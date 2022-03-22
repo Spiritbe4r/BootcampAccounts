@@ -131,10 +131,30 @@ public class AccountHandler {
 
     String id = request.pathVariable("id");
 
-    Mono<AccountDto> accountMono = accountService.getAccountById(id);
+    Mono<Account> accountMono = accountService.getAccountById(id);
     return accountMono
           .doOnNext(c -> LOGGER.info("deleteConsumption: consumptonId={}", c.getId()))
           .flatMap(c -> accountService.deleteAccount(id).then(ServerResponse.noContent().build()))
+          .switchIfEmpty(ServerResponse.notFound().build());
+  }
+
+  /**
+   * Update saving account mono.
+   *
+   * @param request the request
+   * @return the mono
+   */
+  public Mono<ServerResponse> updateAccount(ServerRequest request){
+    Mono<Account> accountMono = request.bodyToMono(Account.class);
+    String id = request.pathVariable("id");
+    return accountService.getAccountById(id).zipWith(accountMono, (db,req) -> {
+            db.setAmount(req.getAmount());
+            db.setMovementPerMonth((req.getMovementPerMonth()));
+            return db;
+          }).flatMap( c -> ServerResponse
+                .ok()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(accountService.update(c),Account.class))
           .switchIfEmpty(ServerResponse.notFound().build());
   }
 }
