@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreditCard {
-    private String pan;
+  private String pan;
 
-    private ClientCommand client;
+  private ClientCommand client;
 
-    private boolean debitor ;
+  private boolean debitor;
 }

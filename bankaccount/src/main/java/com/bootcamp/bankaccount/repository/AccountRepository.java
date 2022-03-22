@@ -9,9 +9,10 @@ import reactor.core.publisher.Mono;
 public interface AccountRepository extends ReactiveMongoRepository<Account, String> {
 
 
-    /*Mono<AccountDto> findByName(String name);*/
-    //Mono<AccountDto> findByAccountNumber(String accountNumber);
+  /*Mono<AccountDto> findByName(String name);*/
+  //Mono<AccountDto> findByAccountNumber(String accountNumber);
 
-    Mono<Account> findByAccountNumber(String accountNumber);
-    Mono<Account> findByClientIdNumber(String clientIdNumber);
+  Mono<Account> findByAccountNumber(String accountNumber);
+
+  Mono<Account> findByClientIdNumber(String clientIdNumber);
 }

@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientTypeRequest {
-    private String name;
-    private String code;
+  private String name;
+  private String code;
 }

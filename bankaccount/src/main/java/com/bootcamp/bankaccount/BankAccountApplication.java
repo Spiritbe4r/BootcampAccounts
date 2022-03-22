@@ -10,27 +10,25 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import static com.bootcamp.bankaccount.util.Constants.API_CLIENT_URL;
-
 
 @EnableEurekaClient
 @SpringBootApplication
 public class BankAccountApplication {
 
-	@Value("${microservices-urls.api-client}")
-	private String API_CLIENT;
+  @Value("${microservices-urls.api-client}")
+  private String apiClient;
 
-	@Bean
-	public WebClient webClient(WebClient.Builder builder){
-		return builder
-				.baseUrl(API_CLIENT)
-				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-				.build();
-	}
+  @Bean
+  public WebClient webClient(WebClient.Builder builder) {
+    return builder
+          .baseUrl(apiClient)
+          .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+          .build();
+  }
 
 
-	public static void main(String[] args) {
-		SpringApplication.run(BankAccountApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(BankAccountApplication.class, args);
+  }
 
 }

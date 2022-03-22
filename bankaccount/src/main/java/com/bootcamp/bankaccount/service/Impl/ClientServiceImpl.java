@@ -12,17 +12,17 @@ import reactor.core.publisher.Mono;
 @Service
 public class ClientServiceImpl implements ClientService {
 
-    @Autowired
-    private WebClient webClient;
+  @Autowired
+  private WebClient webClient;
 
-    private static final Logger LOGGER= LoggerFactory.getLogger(ClientServiceImpl.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(ClientServiceImpl.class);
 
-    @Override
-    public Mono<ClientQuery> getClient(String clientIdNumber) {
-        return webClient.get()
-                .uri("/findClientCredit/"+clientIdNumber)
-                .retrieve()
-                .bodyToMono(ClientQuery.class)
-                .doOnNext(c->LOGGER.info("Client response : {}",c.getName()));
-    }
+  @Override
+  public Mono<ClientQuery> getClient(String clientIdNumber) {
+    return webClient.get()
+          .uri("/findClientCredit/" + clientIdNumber)
+          .retrieve()
+          .bodyToMono(ClientQuery.class)
+          .doOnNext(c -> LOGGER.info("Client response : {}", c.getName()));
+  }
 }

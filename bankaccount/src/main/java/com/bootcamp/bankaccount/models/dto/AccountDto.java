@@ -1,8 +1,12 @@
 package com.bootcamp.bankaccount.models.dto;
 
-import lombok.*;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
 @Setter
@@ -10,28 +14,26 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 public class AccountDto {
-	private String id;
+  private String id;
 
-	private String accountNumber;
+  private String accountNumber;
 
-	private double balance;
+  private String accountType;
 
-	private String currency;
+  private double amount;
 
-	private String accountType;
+  private String currency;
 
-	private String canBeDeposit;
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
+  private LocalDateTime operationDate = LocalDateTime.now();
 
-	private LocalDateTime operationDate = LocalDateTime.now();
+  private ClientCommand client;
 
-	private ClientCommand client;
+  private int movementPerMonth;
 
-	private int movementPerMonth;
+  private int maxLimitMovementPerMonth;
 
-	private int maxLimitMovementPerMonth;
-
-	private String clientIdNumber;
-
+  private String clientIdNumber;
 
 
 }

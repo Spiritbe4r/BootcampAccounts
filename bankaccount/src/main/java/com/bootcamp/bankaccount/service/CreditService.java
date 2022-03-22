@@ -7,9 +7,27 @@ import reactor.core.publisher.Mono;
 
 public interface CreditService {
 
-    Mono<Boolean> validateDebitorCredit(String clientIdNumber);
+  /**
+   * validate the debitor estate of a client by clientIdNumber mono.
+   *
+   * @param clientIdNumber the client identity number
+   * @return the mono
+   */
+  Mono<Boolean> validateDebtorCredit(String clientIdNumber);
 
-    Flux<Credit> getCredit(String clientIdNumber);
+  /**
+   * Find by client credit by clientIdNumber mono.
+   *
+   * @param clientIdNumber the client identity number
+   * @return the mono
+   */
+  Flux<Credit> getCredit(String clientIdNumber);
 
-    Mono<CreditCard> getCreditCard(String clientIdNumber);
+  /**
+   * Find by credit card by clientIdNumber mono.
+   *
+   * @param clientIdNumber the client identity number
+   * @return the mono
+   */
+  Mono<CreditCard> getCreditCard(String clientIdNumber);
 }

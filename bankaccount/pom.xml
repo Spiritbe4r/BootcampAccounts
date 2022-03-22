@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.bootcamp</groupId>
 	<artifactId>bankaccount</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>bankaccount</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -81,7 +81,18 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.sonarsource.scanner.maven</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>3.7.0.1746</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 </project>

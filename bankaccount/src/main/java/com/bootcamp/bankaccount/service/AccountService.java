@@ -7,19 +7,38 @@ import reactor.core.publisher.Mono;
 
 public interface AccountService {
 
-    Flux<AccountDto> getAccounts();
-    Mono<AccountDto> getAccountById(String id);
+  Flux<AccountDto> getAccounts();
+
+  Mono<AccountDto> getAccountById(String id);
 
 
-    Mono<Account> saveAccount(Account accountDtoMono);
+  Mono<Account> saveAccount(Account accountDtoMono);
 
-    Mono<AccountDto> updateAccount(Mono<AccountDto> accountDtoMono,String id);
+  Mono<AccountDto> updateAccount(Mono<AccountDto> accountDtoMono, String id);
 
-    Mono<Void> deleteAccount(String id);
+  Mono<Void> deleteAccount(String id);
 
-    Mono<Account> validateClientIdNumber(String clientIdNumber);
+  /**
+   * Validate client identity number mono.
+   *
+   * @param clientIdNumber the client identity number
+   * @return the mono
+   */
+  Mono<Account> validateClientIdNumber(String clientIdNumber);
 
-    Mono<Account> findByClientIdNumber(String clientIdNumber);
+  /**
+   * Find by client identity number mono.
+   *
+   * @param clientIdNumber the client identity number
+   * @return the mono
+   */
+  Mono<Account> findByClientIdNumber(String clientIdNumber);
 
-    Mono<Account> findByAccountNumber(String accountNumber);
+  /**
+   * Find by account number mono.
+   *
+   * @param accountNumber the account number
+   * @return the mono
+   */
+  Mono<Account> findByAccountNumber(String accountNumber);
 }

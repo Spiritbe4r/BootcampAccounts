@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Credit {
 
-    private String contractNumber;
+  private String contractNumber;
 
-    private ClientCommand client;
+  private ClientCommand client;
 
-    private boolean debitor ;
+  private boolean debitor;
 }

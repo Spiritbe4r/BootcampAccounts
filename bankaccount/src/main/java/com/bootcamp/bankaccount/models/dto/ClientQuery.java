@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ClientQuery {
-    private String name;
-    private String clientIdNumber;
-    //private String clientIdType;
-    private ClientTypeRequest clientType;
+  private String name;
+  private String clientIdNumber;
+  private String clientIdType;
+  private ClientTypeRequest clientType;
 }
