@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.bootcamp</groupId>
-	<artifactId>bankaccount</artifactId>
-	<version>0.0.1</version>
+	<artifactId>account</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>bankaccount</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
