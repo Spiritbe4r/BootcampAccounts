@@ -1,15 +1,27 @@
+server:
+  port: 8082
 spring:
   application:
     name: bankaccounts-microservice
+  data:
+    mongodb:
+      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?retryWrites=true&w=majority
   config:
-    import: configserver:http://localhost:8887
-  profiles:
-    active: dev
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
+    import: optional:configserver:http://localhost:8887
+    profiles:
+      active: dev
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.101.7:8761/eureka
 
-
+microservices-urls:
+  api-client: http://localhost:8095/api/client
+  api-credit: http://localhost:8095/api/credit
+  api-creditcard: http://localhost:8095/api/creditcard
 
 
 
