@@ -8,14 +8,17 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="bankaccount" />
+        <module name="BootcampAccounts" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bankaccount" target="11" />
+      <module name="BootcampAccounts" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BootcampAccounts" options="-parameters" />
       <module name="bankaccount" options="-parameters" />
     </option>
   </component>
