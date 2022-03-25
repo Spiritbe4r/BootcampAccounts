@@ -1,9 +1,10 @@
 name: AzureSpringCloud
 on: push
+
 env:
   ASC_PACKAGE_PATH: ${{ github.workspace }}
   AZURE_SUBSCRIPTION: ${{ secrets.AZURE_CREDENTIALS.subscriptionId }}
-
+  
 jobs:
   deploy_to_production:
     runs-on: ubuntu-latest
@@ -27,4 +28,4 @@ jobs:
       - name: Install Azure Spring Cloud extension
         run: az extension add --name spring-cloud
       - name: Deploy to Azure Spring Cloud
-        run: az spring-cloud app deploy --name accountmicroservice --service azurespringboot2022  --resource-group AzureSpringBoot --artifact-path target/bankaccount-0.0.1.jar
+        run: az spring-cloud app deploy --name accountmicroservice --service azurespringboot2022  --resource-group AzureSpringBoot --artifact-path target/account-0.0.1-SNAPSHOT.jar
