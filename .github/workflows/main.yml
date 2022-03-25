@@ -19,7 +19,7 @@ jobs:
           
       - name: maven compile, clean
         run: |
-          mvn clean package
+          mvn clean package -DskipTests
       - name: Login to Azure Spring Cloud
         uses: azure/login@v1
         with:
