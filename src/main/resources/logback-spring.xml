@@ -21,7 +21,7 @@
 
     <!-- LOG "com.bootcamp*" at TRACE level -->
     <logger name="com.bootcamp.bankaccount" level="debug" additivity="false">
-        <appender-ref ref="RollingFile" />
+
         <appender-ref ref="Console" />
     </logger>
 
