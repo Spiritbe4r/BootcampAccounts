@@ -2,7 +2,7 @@ spring:
 
 
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:https://azurespringboot2022-configserver.azuremicroservices.io/account-microservice/dev
     profiles:
       active: dev
     mvc:
