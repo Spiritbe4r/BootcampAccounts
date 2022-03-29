@@ -1,25 +1,8 @@
-server:
-  port: 8082
 spring:
-  application:
-    name: account-microservice
-  data:
-    mongodb:
-      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?retryWrites=true&w=majority
-  config:
-    import: optional:configserver:http://localhost:8888
-    profiles:
-      active: dev
-    mvc:
-      pathmatch:
-        matching-strategy: ant_path_matcher
+  main:
+    allow-bean-definition-overriding: true
 
 
-
-microservices-urls:
-  api-client: http://localhost:8095/api/client
-  api-credit: http://localhost:8095/api/credit
-  api-creditcard: http://localhost:8095/api/creditcard
 
 
 

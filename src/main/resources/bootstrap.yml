@@ -1,3 +1,18 @@
 spring:
-  main:
-    allow-bean-definition-overriding: true
+  application:
+    name: account-microservice
+
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL}
+    profiles:
+      active: dev
+    mvc:
+      pathmatch:
+        matching-strategy: ant_path_matcher
+
+
+#
+#microservices-urls:
+#  api-client: http://localhost:8095/api/client
+#  api-credit: http://localhost:8095/api/credit
+#  api-creditcard: http://localhost:8095/api/creditcard
