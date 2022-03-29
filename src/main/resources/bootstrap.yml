@@ -2,7 +2,7 @@ spring:
 
 
   config:
-    import: optional:configserver:${CONFIG_SERVER_URL}
+    import: optional:configserver:http://localhost:8888
     profiles:
       active: dev
     mvc:
@@ -10,8 +10,8 @@ spring:
         matching-strategy: ant_path_matcher
 
 
-#
-#microservices-urls:
-#  api-client: http://localhost:8095/api/client
-#  api-credit: http://localhost:8095/api/credit
-#  api-creditcard: http://localhost:8095/api/creditcard
+
+microservices-urls:
+  api-client: http://localhost:8095/api/client
+  api-credit: http://localhost:8095/api/credit
+  api-creditcard: http://localhost:8095/api/creditcard
