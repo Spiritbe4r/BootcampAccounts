@@ -1,8 +1,11 @@
 spring:
 
+  data:
+    mongodb:
+      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?retryWrites=true&w=majority
 
   config:
-    import: optional:configserver:https://azurespringboot2022-configserver.azuremicroservices.io
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
     profiles:
       active: dev
     mvc:
