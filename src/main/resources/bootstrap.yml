@@ -1,6 +1,6 @@
 spring:
   application:
-    name: creditcard-microservice
+    name: account-microservice
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
