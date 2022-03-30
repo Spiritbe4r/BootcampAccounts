@@ -1,10 +1,9 @@
 spring:
-
-  profiles:
-    active: dev
+  application:
+    name: creditcard-microservice
   mvc:
     pathmatch:
-      matching-strategy: ant-path-matcher
+      matching-strategy: ant_path_matcher
 
 microservices-urls:
   api-client: https://azurespringboot2022-apigateway.azuremicroservices.io/CLIENTMICROSERVICE/api/client
