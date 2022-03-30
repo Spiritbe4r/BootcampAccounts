@@ -1,7 +1,10 @@
 spring:
-  data:
-    mongodb:
-      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?ssl=true&retryWrites=true&w=majority
+
+  profiles:
+    active: dev
+#  data:
+#    mongodb:
+#      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?ssl=true&retryWrites=true&w=majority
 
 microservices-urls:
   api-client: https://azurespringboot2022-apigateway.azuremicroservices.io/CLIENTMICROSERVICE/api/client
