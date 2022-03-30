@@ -21,8 +21,7 @@ import reactor.core.publisher.Mono;
 @RequestMapping(path = "/api/account/rest")
 public class AccountController {
   private static final Logger LOGGER = LoggerFactory.getLogger(AccountController.class);
-  @Value("${spring.application.name}")
-  private String appName;
+
   @Autowired
   private AccountService accountService;
 
