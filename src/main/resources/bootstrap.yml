@@ -6,6 +6,7 @@ spring:
     mongodb:
       uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?ssl=true&retryWrites=true&w=majority
 
-
-#  api-credit: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITMICROSERVICE/api/credit
-#  api-creditcard: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITCARDMICROSERVICE/api/creditcard
+microservices-urls:
+  api-client: ${API_CLIENT_CONFIG}
+  api-credit: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITMICROSERVICE/api/credit
+  api-creditcard: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITCARDMICROSERVICE/api/creditcard
