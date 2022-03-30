@@ -1,10 +1,4 @@
 spring:
-  application:
-    name: accountmicroservice
-
-  cloud:
-    config:
-      profile: default
 
 microservices-urls:
   api-client: https://azurespringboot2022-apigateway.azuremicroservices.io/CLIENTMICROSERVICE/api/client
