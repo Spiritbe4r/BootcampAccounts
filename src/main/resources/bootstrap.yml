@@ -1,7 +1,5 @@
 spring:
 
-  config:
-
   profiles:
     active: dev
   mvc:
