@@ -2,9 +2,10 @@ spring:
 
   mvc:
     pathmatch:
-      matching-strategy: ant_path_matcher
+      matching-strategy: ant-path-matcher
 
-microservices_urls:
-  api_client: https://azurespringboot2022-apigateway:azuremicroservices:io/CLIENTMICROSERVICE/api/client
-  api_credit: https://azurespringboot2022-apigateway:azuremicroservices:io/CREDITMICROSERVICE/api/credit
-  api_creditcard: https://azurespringboot2022-apigateway:azuremicroservices:io/CREDITCARDMICROSERVICE/api/creditcard
+microservices-urls:
+
+  api-client: https://azurespringboot2022-apigateway.azuremicroservices.io/CLIENTMICROSERVICE/api/client
+  api-credit: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITMICROSERVICE/api/credit
+  api-creditcard: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITCARDMICROSERVICE/api/creditcard
