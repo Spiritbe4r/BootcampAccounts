@@ -2,11 +2,10 @@ spring:
 
   profiles:
     active: dev
-#  data:
-#    mongodb:
-#      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?ssl=true&retryWrites=true&w=majority
+  data:
+    mongodb:
+      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?ssl=true&retryWrites=true&w=majority
 
-microservices-urls:
-  api-client: https://azurespringboot2022-apigateway.azuremicroservices.io/CLIENTMICROSERVICE/api/client
-  api-credit: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITMICROSERVICE/api/credit
-  api-creditcard: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITCARDMICROSERVICE/api/creditcard
+
+#  api-credit: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITMICROSERVICE/api/credit
+#  api-creditcard: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITCARDMICROSERVICE/api/creditcard
