@@ -1,20 +1,8 @@
 spring:
 
-  data:
-    mongodb:
-      uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?retryWrites=true&w=majority
-
-  config:
-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
-  profiles:
-    active: dev
+  application:
+    name: account-microservice
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
 
-
-
-microservices-urls:
-  api-client: http://localhost:8095/api/client
-  api-credit: http://localhost:8095/api/credit
-  api-creditcard: http://localhost:8095/api/creditcard
