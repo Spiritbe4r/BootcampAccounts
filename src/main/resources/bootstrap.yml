@@ -1,7 +1,5 @@
 spring:
 
-  application:
-    name: account-microservice
   mvc:
     pathmatch:
       matching-strategy: ant-path-matcher
