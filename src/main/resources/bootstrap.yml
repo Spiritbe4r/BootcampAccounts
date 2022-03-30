@@ -1,9 +1,10 @@
 spring:
   application:
-    name: account-microservice
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher
+    name: accountmicroservice
+
+  cloud:
+    config:
+      profile: default
 
 microservices-urls:
   api-client: https://azurespringboot2022-apigateway.azuremicroservices.io/CLIENTMICROSERVICE/api/client
