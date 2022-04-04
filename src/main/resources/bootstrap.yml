@@ -1,12 +1,30 @@
 spring:
-
   profiles:
-    active: dev
+    active: prod
+
+---
+spring:
+
+  config:
+    activate:
+      on-profile:
+        - prod
   data:
     mongodb:
       uri: mongodb+srv://spiritbear:Cuymagic321@mycluster.s22zz.mongodb.net/accounts?ssl=true&retryWrites=true&w=majority
 
 microservices-urls:
   api-client: ${API_CLIENT_CONFIG}
-  api-credit: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITMICROSERVICE/api/credit
-  api-creditcard: https://azurespringboot2022-apigateway.azuremicroservices.io/CREDITCARDMICROSERVICE/api/creditcard
+  api-credit:  ${API_CREDIT_CONFIG}
+  api-creditcard: ${API_CREDITCARD_CONFIG}
+
+---
+
+spring:
+  application:
+    name: account-microservice
+  config:
+    activate:
+      on-profile:
+        - dev
+    import: optional:configserver:http://localhost:8888
